@@ -14,6 +14,7 @@ const INFO = {
   department: "School of Sustainability",
   location: "Tempe, Arizona 85288",
   email: "akuma469@asu.edu",
+  mobile: "+1 602358----",
   lastUpdated: "May 2026",
 
   // ----------------------------------------------------------

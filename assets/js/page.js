@@ -30,7 +30,7 @@ function buildNav(currentPage) {
 
   const items = [
     { page: null,             href: '../index.html',         label: 'Home'            },
-    { page: 'research',       href: 'research.html',         label: 'Research'        },
+    { page: 'research',       href: 'research.html',         label: 'Research/Software' },
     { page: 'publications',   href: 'publications.html',     label: 'Publications'    },
     { page: 'workexperience', href: 'workexperience.html',   label: 'Work Experience' },
     { page: 'awards',         href: 'awards.html',           label: 'Awards'          },
@@ -148,6 +148,7 @@ function renderAbout(main) {
 function renderResearch(main) {
   const interests = INFO.research || [];
   const projects  = INFO.researchProjects || [];
+  const software  = INFO.software || [];
 
   const interestCards = interests.map(r => `
     <div class="research-card">
@@ -156,6 +157,27 @@ function renderResearch(main) {
       <p>${r.description}</p>
     </div>
   `).join('');
+
+  const softwareCards = software.map(s => {
+    const tags = (s.tags || []).map(t => `<span class="pub-tag">${t}</span>`).join('');
+    const links = Object.entries(s.links || {})
+      .filter(([, url]) => url)
+      .map(([label, url]) => `<a href="${url}" class="pub-link" target="_blank" rel="noopener">${label === 'software' ? 'Launch Software' : cap(label)}</a>`)
+      .join('');
+    return `
+      <div class="rp-card">
+        <div class="rp-content">
+          <div class="rp-header">
+            <h3 class="rp-title">${s.title}</h3>
+            <span class="rp-status rp-status--ongoing">Software</span>
+          </div>
+          <p class="rp-description">${s.description}</p>
+          ${tags ? `<div class="pub-tags">${tags}</div>` : ''}
+          ${links ? `<div class="pub-links">${links}</div>` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
 
   const projectCards = projects.map(p => {
     const tags  = (p.tags  || []).map(t => `<span class="pub-tag">${t}</span>`).join('');
@@ -185,6 +207,10 @@ function renderResearch(main) {
       ${interests.length ? `
         <h2 class="section-title">Research Interests</h2>
         <div class="rp-list" style="margin-bottom:3rem;">${interestCards}</div>
+      ` : ''}
+      ${software.length ? `
+        <h2 class="section-title">Software Tools</h2>
+        <div class="rp-list" style="margin-bottom:3rem;">${softwareCards}</div>
       ` : ''}
       ${projects.length ? `
         <h2 class="section-title">Research Projects</h2>
@@ -468,8 +494,8 @@ const PAGES = {
     render: renderAbout,
   },
   research: {
-    title:  'Research',
-    meta:   'Research interests &amp; active projects',
+    title:  'Research/Software',
+    meta:   'Research interests, software tools &amp; active projects',
     render: renderResearch,
   },
   publications: {

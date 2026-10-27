@@ -165,8 +165,8 @@ function renderResearch(main) {
       .map(([label, url]) => `<a href="${url}" class="pub-link" target="_blank" rel="noopener">${label === 'software' ? 'Launch Software' : cap(label)}</a>`)
       .join('');
     return `
-      <div class="rp-card">
-        <div class="rp-content">
+      <div class="software-card">
+        <div class="software-content">
           <div class="rp-header">
             <h3 class="rp-title">${s.title}</h3>
             <span class="rp-status rp-status--ongoing">Software</span>
@@ -174,6 +174,9 @@ function renderResearch(main) {
           <p class="rp-description">${s.description}</p>
           ${tags ? `<div class="pub-tags">${tags}</div>` : ''}
           ${links ? `<div class="pub-links">${links}</div>` : ''}
+        </div>
+        <div class="software-image">
+          <img src="../assets/Battery%20Recycling%20Knowledge%20Intelligence%20Infographic.png" alt="Battery Recycling Literature-Driven Network Intelligence Module infographic" loading="lazy">
         </div>
       </div>
     `;

@@ -37,11 +37,8 @@ function buildNav(currentPage) {
     { page: 'education',      href: 'education.html',        label: 'Education'       },
     { page: 'news',           href: 'news.html',             label: 'News'            },
     { page: 'gallery',        href: 'gallery.html',          label: 'Gallery'         },
+    { page: 'contact',        href: 'contact.html',          label: 'Contact'         },
   ];
-
-  if (INFO.links && INFO.links.cv) {
-    items.push({ page: null, href: '../' + INFO.links.cv, label: 'CV', external: true });
-  }
 
   items.forEach(item => {
     const li = document.createElement('li');
@@ -324,6 +321,21 @@ function renderWorkExperience(main) {
   main.innerHTML = `<div class="container"><div class="edu-timeline">${items}</div></div>`;
 }
 
+// ---- Contact ----
+function renderContact(main) {
+  main.innerHTML = `
+    <div class="container">
+      <div class="about-body">
+        <h2 class="section-title">Contact Information</h2>
+        <p><strong>Address:</strong> ${INFO.location || ''}</p>
+        <p><strong>Email:</strong> <a href="mailto:${INFO.email}">${INFO.email}</a></p>
+        <p><strong>Mobile:</strong> ${INFO.mobile || ''}</p>
+        ${INFO.links && INFO.links.linkedin ? `<p><strong>LinkedIn:</strong> <a href="${INFO.links.linkedin}" target="_blank" rel="noopener">View profile</a></p>` : ''}
+      </div>
+    </div>
+  `;
+}
+
 // ---- News ----
 function renderNews(main) {
   const news = INFO.news || [];
@@ -489,6 +501,11 @@ const PAGES = {
     title:  'Gallery',
     meta:   () => `${(INFO.gallery || []).length} photos`,
     render: renderGallery,
+  },
+  contact: {
+    title:  'Contact',
+    meta:   'Get in touch',
+    render: renderContact,
   },
 };
 

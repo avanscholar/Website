@@ -25,7 +25,7 @@ function buildNav() {
   const ul = $('nav-links');
 
   const items = [
-    { href: 'page/research.html',        label: 'Research'        },
+    { href: 'page/research.html',        label: 'Research/Software' },
     { href: 'page/publications.html',    label: 'Publications'    },
     { href: 'page/workexperience.html',  label: 'Work Experience' },
     { href: 'page/awards.html',          label: 'Awards'          },

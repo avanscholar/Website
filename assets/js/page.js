@@ -30,7 +30,6 @@ function buildNav(currentPage) {
 
   const items = [
     { page: null,             href: '../index.html',         label: 'Home'            },
-    { page: 'about',          href: 'about.html',            label: 'About'           },
     { page: 'research',       href: 'research.html',         label: 'Research'        },
     { page: 'publications',   href: 'publications.html',     label: 'Publications'    },
     { page: 'workexperience', href: 'workexperience.html',   label: 'Work Experience' },

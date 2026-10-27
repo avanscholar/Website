@@ -669,6 +669,17 @@ const INFO = {
   //   },
   // ],
 
+  software: [
+    {
+      title: "Battery Recycling Intelligence",
+      description: "An interactive decision-support platform for exploring battery recycling knowledge and comparing candidate recycling pathways. The tool organizes literature-derived information on battery inputs, recycling methodologies, chemicals, recovered critical materials, recovery performance, and sustainability indicators to support evidence-based recycling technology selection.",
+      tags: ["Battery Recycling", "Knowledge Graph", "AI", "Decision Support", "Sustainability"],
+      links: {
+        software: "https://battery-recycling.devspaced.app/"
+      }
+    }
+  ],
+
   // ----------------------------------------------------------
   // EDUCATION
   // ----------------------------------------------------------

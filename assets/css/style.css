@@ -1131,3 +1131,51 @@ h1, h2, h3, h4 {
 
   .pub-summary-stat:last-child { border-bottom: none; }
 }
+
+
+/* ============================================================
+   SOFTWARE TOOL CARD
+   ============================================================ */
+.software-card {
+  display: grid;
+  grid-template-columns: minmax(240px, .8fr) minmax(0, 2.2fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.software-content {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  justify-content: center;
+}
+
+.software-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.software-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--clr-border);
+}
+
+@media (max-width: 820px) {
+  .software-card {
+    grid-template-columns: 1fr;
+  }
+
+  .software-image {
+    order: 2;
+  }
+}

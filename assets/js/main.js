@@ -25,7 +25,6 @@ function buildNav() {
   const ul = $('nav-links');
 
   const items = [
-    { href: 'page/about.html',           label: 'About'           },
     { href: 'page/research.html',        label: 'Research'        },
     { href: 'page/publications.html',    label: 'Publications'    },
     { href: 'page/workexperience.html',  label: 'Work Experience' },
@@ -111,6 +110,46 @@ function buildHero() {
   `;
 }
 
+
+// ============================================================
+// ABOUT — merged into the home page
+// ============================================================
+function buildAbout() {
+  const section = $('about');
+  if (!section) return;
+
+  const paras = (Array.isArray(INFO.bio) ? INFO.bio : [INFO.bio])
+    .filter(Boolean)
+    .map(p => `<p>${p}</p>`)
+    .join('');
+
+  section.innerHTML = `
+    <div class="container">
+      <h2 class="section-title">Biography</h2>
+      <div class="about-body">${paras}</div>
+    </div>
+  `;
+}
+
+function buildFooter() {
+  const footer = $('site-footer');
+  if (!footer) return;
+  const yr = new Date().getFullYear();
+  footer.innerHTML = `
+    <p>&copy; ${yr} ${INFO.name} &middot; ${INFO.institution}</p>
+    <p style="margin-top:.4rem;font-size:.73rem;opacity:.7;">Last updated: ${INFO.lastUpdated || yr}</p>
+  `;
+}
+
+function initScrollTop() {
+  const btn = $('scroll-top');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
 // ============================================================
 // INIT
 // ============================================================
@@ -118,4 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.title = `${INFO.name} | ${INFO.title}`;
   buildNav();
   buildHero();
+  buildAbout();
+  buildFooter();
+  initScrollTop();
 });

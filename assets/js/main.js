@@ -34,9 +34,7 @@ function buildNav() {
     { href: 'page/gallery.html',         label: 'Gallery'         },
   ];
 
-  if (INFO.links.cv) {
-    items.push({ href: INFO.links.cv, label: 'CV', external: true });
-  }
+  items.push({ href: 'page/contact.html', label: 'Contact' });
 
   items.forEach(item => {
     const li = document.createElement('li');

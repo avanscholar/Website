@@ -187,7 +187,7 @@ function renderResearch(main) {
     <div class="container">
       ${interests.length ? `
         <h2 class="section-title">Research Interests</h2>
-        <div class="research-grid" style="margin-bottom:3rem;">${interestCards}</div>
+        <div class="rp-list" style="margin-bottom:3rem;">${interestCards}</div>
       ` : ''}
       ${projects.length ? `
         <h2 class="section-title">Research Projects</h2>

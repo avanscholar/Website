@@ -1179,3 +1179,27 @@ h1, h2, h3, h4 {
     order: 2;
   }
 }
+
+
+/* Homepage research mission */
+.hero-mission {
+  max-width: 720px;
+  margin: 0 0 1.35rem;
+  padding-left: 14px;
+  border-left: 3px solid var(--clr-accent);
+  color: var(--clr-text);
+  font-size: .98rem;
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+@media (max-width: 720px) {
+  .hero-mission {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-top: .75rem;
+    border-left: 0;
+    border-top: 3px solid var(--clr-accent);
+  }
+}

@@ -124,7 +124,7 @@ function buildAbout() {
 
   section.innerHTML = `
     <div class="container">
-      <h2 class="section-title">Biography</h2>
+      <h2 class="section-title">About Dr. Avan</h2>
       <div class="about-body">${paras}</div>
     </div>
   `;

@@ -766,7 +766,7 @@ const INFO = {
     },
     {
       url:     "../assets/outing_1.jpeg",
-      thumb:   "../assets/scene_1.jpeg",
+      thumb:   "../assets/outing_1.jpeg",
       caption: "Weekly lab meeting — Neural Computation & Interfaces Lab",
       category: "Outing",
     },

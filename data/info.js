@@ -822,8 +822,8 @@ const INFO = {
     {
       url:     "../assets/conf_2.jpeg",
       thumb:   "../assets/conf_2.jpeg",
-      caption: "Poster session at COSYNE 2025, Montreal",
-      category: "Connecting and growing.",
+      caption: "Connecting and growing.",
+      category: "Conference",
     },
     {
       url:     "../assets/conf_3.jpeg",

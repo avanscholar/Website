@@ -35,7 +35,7 @@ function buildNav(currentPage) {
     { page: 'workexperience', href: 'workexperience.html',   label: 'Work Experience' },
     { page: 'awards',         href: 'awards.html',           label: 'Awards'          },
     { page: 'education',      href: 'education.html',        label: 'Education'       },
-    { page: 'news',           href: 'news.html',             label: 'News'            },
+    { page: 'news',           href: 'news.html',             label: 'News/Update'            },
     { page: 'gallery',        href: 'gallery.html',          label: 'Gallery'         },
     { page: 'contact',        href: 'contact.html',          label: 'Contact'         },
   ];
@@ -522,7 +522,7 @@ const PAGES = {
     render: renderEducation,
   },
   news: {
-    title:  'News',
+    title:  'News/Update',
     meta:   () => `${(INFO.news || []).length} updates`,
     render: renderNews,
   },

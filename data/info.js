@@ -762,7 +762,7 @@ const INFO = {
       url:     "../assets/scene_2.jpeg",
       thumb:   "../assets/scene_2.jpeg",
       caption: "Presenting at NeurIPS 2024 in Vancouver, Canada",
-      category: "Conferences",
+      category: "Scematic_Picture",
     },
     {
       url:     "../assets/outing_1.jpeg",

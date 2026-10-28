@@ -757,13 +757,13 @@ const INFO = {
       url:     "../assets/scene_1.jpeg",
       thumb:   "../assets/scene_1.jpeg",
       caption: "Planet over profit",
-      category: "Scematic_Picture",
+      category: "Scematic Picture",
     },
     {
       url:     "../assets/scene_2.jpeg",
       thumb:   "../assets/scene_2.jpeg",
-      caption: "Presenting at NeurIPS 2024 in Vancouver, Canada",
-      category: "Planet over profit",
+      caption: "Planet over profit",
+      category: "Scematic Picture",
     },
     {
       url:     "../assets/outing_1.jpeg",

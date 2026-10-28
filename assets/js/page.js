@@ -211,6 +211,14 @@ function renderResearch(main) {
         <h2 class="section-title">Research Interests</h2>
         <div class="rp-list" style="margin-bottom:3rem;">${interestCards}</div>
       ` : ''}
+      <div class="research-figures">
+        <figure class="research-figure">
+          <img src="../assets/Bio.png" alt="Research framework and vision" loading="lazy">
+        </figure>
+        <figure class="research-figure">
+          <img src="../assets/domain.png" alt="Research domains and areas of expertise" loading="lazy">
+        </figure>
+      </div>
       ${software.length ? `
         <h2 class="section-title">Software Tools</h2>
         <div class="rp-list" style="margin-bottom:3rem;">${softwareCards}</div>

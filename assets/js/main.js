@@ -91,6 +91,7 @@ function buildHero() {
           <h1>${INFO.name}</h1>
           <p class="hero-subtitle">${INFO.title}</p>
           <p class="hero-institution">${institution}</p>
+          ${INFO.mission ? `<p class="hero-mission">${INFO.mission}</p>` : ''}
           ${tags ? `<div class="hero-tags">${tags}</div>` : ''}
           <div class="hero-links">${buttons}</div>
         </div>

@@ -30,7 +30,7 @@ function buildNav() {
     { href: 'page/workexperience.html',  label: 'Work Experience' },
     { href: 'page/awards.html',          label: 'Awards'          },
     { href: 'page/education.html',       label: 'Education'       },
-    { href: 'page/news.html',            label: 'News'            },
+    { href: 'page/news.html',            label: 'News/Update'            },
     { href: 'page/gallery.html',         label: 'Gallery'         },
   ];
 

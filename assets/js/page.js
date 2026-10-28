@@ -252,15 +252,15 @@ function renderPublications(main) {
       <div class="pub-summary">
         <div class="pub-summary-stat">
           <span class="pub-summary-num">${pubs.length}</span>
-          <span class="pub-summary-label">Total Publications</span>
+          <span class="pub-summary-label">Total Outcomes</span>
         </div>
         <div class="pub-summary-stat">
           <span class="pub-summary-num">${articles.length}</span>
-          <span class="pub-summary-label">Journal Articles</span>
+          <span class="pub-summary-label">Peer-reviewed Articles</span>
         </div>
         <div class="pub-summary-stat">
           <span class="pub-summary-num">${conferences.length}</span>
-          <span class="pub-summary-label">Conference Papers</span>
+          <span class="pub-summary-label">Conference Papers/Presentations</span>
         </div>
       </div>
 

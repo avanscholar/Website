@@ -753,14 +753,14 @@ const INFO = {
   // ----------------------------------------------------------
   gallery: [
     {
-      url:     "../assets/Avan_pic.JPG",
-      thumb:   "../assets/Avan_pic.JPG",
+      url:     "../assets/scene_1.jpeg",
+      thumb:   "../assets/scene_1.jpeg",
       caption: "Annual lab retreat — Lake Tahoe, August 2024",
       category: "Lab Life",
     },
     {
-      url:     "https://picsum.photos/seed/conf01/1200/800",
-      thumb:   "https://picsum.photos/seed/conf01/600/450",
+      url:     "../assets/scene_2.jpeg",
+      thumb:   "../assets/scene_2.jpeg",
       caption: "Presenting at NeurIPS 2024 in Vancouver, Canada",
       category: "Conferences",
     },

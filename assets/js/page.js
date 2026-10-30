@@ -176,15 +176,6 @@ function renderResearch(main) {
           </figure>
         `).join('')}
       </div>
-      ${i === 0 ? `
-        <div class="research-interest-figures">
-          ${researchFigures.map(fig => `
-            <figure class="research-interest-figure research-zoom-trigger" tabindex="0" role="button" aria-label="Enlarge ${fig.alt}">
-              <img src="${fig.src}" alt="${fig.alt}" loading="lazy">
-            </figure>
-          `).join('')}
-        </div>
-      ` : ''}
     </div>
   `).join('');
 

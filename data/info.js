@@ -20,7 +20,7 @@ const INFO = {
   // ----------------------------------------------------------
   // MISSION
   // ----------------------------------------------------------
-  mission: "Advancing sustainable and circular industrial systems through trustworthy AI, data-driven engineering, and intelligent decision-making.",
+  mission: "Advancing sustainable and circular industrial systems through explainable AI, data-driven engineering, and intelligent decision-making.",
 
   // ----------------------------------------------------------
   // PROFILE PHOTO

@@ -169,6 +169,13 @@ function renderResearch(main) {
         <h3>${r.title}</h3>
         <p>${r.description}</p>
       </div>
+      <div class="research-header-figures">
+        ${headerFigures.map(fig => `
+          <figure class="research-interest-figure research-zoom-trigger" tabindex="0" role="button" aria-label="Enlarge ${fig.alt}">
+            <img src="${fig.src}" alt="${fig.alt}" loading="lazy">
+          </figure>
+        `).join('')}
+      </div>
       ${i === 0 ? `
         <div class="research-interest-figures">
           ${researchFigures.map(fig => `
@@ -232,13 +239,6 @@ function renderResearch(main) {
     <div class="container">
       ${interests.length ? `
         <h2 class="section-title">Research Interests</h2>
-        <div class="research-header-figures">
-          ${headerFigures.map(fig => `
-            <figure class="research-interest-figure research-zoom-trigger" tabindex="0" role="button" aria-label="Enlarge ${fig.alt}">
-              <img src="${fig.src}" alt="${fig.alt}" loading="lazy">
-            </figure>
-          `).join('')}
-        </div>
         <div class="rp-list" style="margin-bottom:3rem;">${interestCards}</div>
       ` : ''}
       ${software.length ? `

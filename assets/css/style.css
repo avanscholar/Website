@@ -1322,3 +1322,33 @@ h1, h2, h3, h4 {
 .research-lightbox-close:hover {
   background: rgba(255,255,255,.22);
 }
+
+
+/* Three figures directly below the Research/Software page header */
+.research-header-figures {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 3rem;
+  align-items: stretch;
+}
+
+.research-header-figures .research-interest-figure {
+  min-width: 0;
+}
+
+.research-header-figures .research-interest-figure img {
+  height: 260px;
+  max-height: 260px;
+}
+
+@media (max-width: 760px) {
+  .research-header-figures {
+    grid-template-columns: 1fr;
+  }
+
+  .research-header-figures .research-interest-figure img {
+    height: auto;
+    max-height: 360px;
+  }
+}

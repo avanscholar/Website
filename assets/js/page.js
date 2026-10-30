@@ -159,13 +159,13 @@ function renderResearch(main) {
   const endOfLifeFigures = [
     { src: "../assets/recycle.png", alt: "Product end-of-life recycling framework" },
     { src: "../assets/sustain.png", alt: "Sustainable product end-of-life framework" },
-    { src: "../assets/allocation.png", alt: "Product end-of-life allocation framework" },
+    { src: "../assets/battery.png", alt: "Product end-of-life allocation framework" },
   ];
 
   const processModelingFigures = [
     { src: "../assets/methanol.png", alt: "Methanol process modeling framework" },
     { src: "../assets/gasification.png", alt: "Gasification process modeling framework" },
-    null,
+    { src: "../assets/allocation.png", alt: "Gasification process modeling framework" },
   ];
 
   const sustainableCircularFigures = [

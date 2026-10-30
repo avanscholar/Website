@@ -1258,3 +1258,67 @@ h1, h2, h3, h4 {
     max-height: 360px;
   }
 }
+
+
+/* Click-to-enlarge research figures */
+.research-zoom-trigger {
+  cursor: zoom-in;
+  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+}
+
+.research-zoom-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--clr-accent);
+}
+
+.research-zoom-trigger:focus-visible {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
+}
+
+.research-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem 2rem;
+  background: rgba(5, 15, 30, .92);
+}
+
+.research-lightbox.open {
+  display: flex;
+}
+
+.research-lightbox-img {
+  display: block;
+  max-width: min(95vw, 1500px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 60px rgba(0,0,0,.45);
+}
+
+.research-lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 50%;
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.research-lightbox-close:hover {
+  background: rgba(255,255,255,.22);
+}

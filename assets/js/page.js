@@ -74,7 +74,54 @@ function buildBanner(title, meta) {
       <h1>${title}</h1>
       ${meta ? `<p class="page-banner-meta">${meta}</p>` : ''}
     </div>
+    <div id="research-lightbox" class="research-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Enlarged research figure">
+      <button type="button" class="research-lightbox-close" aria-label="Close enlarged figure">&times;</button>
+      <img class="research-lightbox-img" src="" alt="">
+    </div>
   `;
+
+  const lightbox = document.getElementById('research-lightbox');
+  const lightboxImg = lightbox ? lightbox.querySelector('.research-lightbox-img') : null;
+  const closeBtn = lightbox ? lightbox.querySelector('.research-lightbox-close') : null;
+
+  function openResearchFigure(img) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeResearchFigure() {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+  }
+
+  main.querySelectorAll('.research-zoom-trigger').forEach(figure => {
+    const img = figure.querySelector('img');
+    figure.addEventListener('click', () => openResearchFigure(img));
+    figure.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openResearchFigure(img);
+      }
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeResearchFigure);
+  if (lightbox) lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeResearchFigure();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox && lightbox.classList.contains('open')) {
+      closeResearchFigure();
+    }
+  });
 }
 
 // ============================================================
@@ -166,7 +213,7 @@ function renderResearch(main) {
       ${i === 0 ? `
         <div class="research-interest-figures">
           ${researchFigures.map(fig => `
-            <figure class="research-interest-figure">
+            <figure class="research-interest-figure research-zoom-trigger" tabindex="0" role="button" aria-label="Enlarge ${fig.alt}">
               <img src="${fig.src}" alt="${fig.alt}" loading="lazy">
             </figure>
           `).join('')}

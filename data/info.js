@@ -76,40 +76,27 @@ const INFO = {
   {
     icon: "♻️",
     title: "AI for Product End-of-Life Modeling",
-    description:
-      "Developing AI-driven computational frameworks that systematically identify, evaluate, and optimize alternative recycling, reuse, recovery, and disposal pathways across the product life cycle. These frameworks integrate material and process knowledge with environmental, economic, and technical performance metrics to enable sustainable and circular-by-design decisions. Their applicability has been demonstrated across diverse products and material systems, providing a scalable approach for transitioning from conventional end-of-life management toward resource-efficient circular systems.",
+    description: "Developing AI-driven computational frameworks that systematically identify, evaluate, and optimize alternative recycling, reuse, recovery, and disposal pathways across the product life cycle. These frameworks integrate material and process knowledge with environmental, economic, and technical performance metrics to enable sustainable and circular-by-design decisions. Their applicability has been demonstrated across diverse products and material systems, providing a scalable approach for transitioning from conventional end-of-life management toward resource-efficient circular systems.",
   },
   {
     icon: "⚙️",
     title: "Explainable AI for Process Modeling",
-    description:
-      "Developing interpretable machine-learning and process-modeling frameworks to predict process performance, identify influential operating variables, and optimize waste-to-value pathways. A key contribution is the design of **closed-loop process systems**, where unreacted raw materials and process intermediates are recovered and recirculated back into the process rather than discarded. This integration reduces virgin material demand and waste generation while improving resource efficiency, product recovery, and overall process sustainability.",
+    description: "Developing interpretable machine-learning and process-modeling frameworks to predict process performance, identify influential operating variables, and optimize waste-to-value pathways. A key contribution is the design of closed-loop process systems, where unreacted raw materials and process intermediates are recovered and recirculated back into the process rather than discarded. This integration reduces virgin material demand and waste generation while improving resource efficiency, product recovery, and overall process sustainability.",
   },
   {
     icon: "🤖",
     title: "AI for Sustainable and Circular Systems Engineering",
-    description:
-      "**Process-level:** Developing AI-driven process frameworks by integrating thermodynamic modeling, superstructure generation, and multi-objective optimization to discover economically viable, circular, and net-zero process pathways.
-
-**System-level:** Developing AI-driven life-cycle network frameworks by integrating production, use, reuse, recycling, recovery, and end-of-life pathways to discover sustainable material flows and circular product systems.",
+    description: "<strong>Process-level:</strong> Developing AI-driven process frameworks by integrating thermodynamic modeling, superstructure generation, and multi-objective optimization to discover economically viable, circular, and net-zero process pathways.<br><br><strong>System-level:</strong> Developing AI-driven life-cycle network frameworks by integrating production, use, reuse, recycling, recovery, and end-of-life pathways to discover sustainable material flows and circular product systems.",
   },
   {
     icon: "📚",
     title: "AI- and Literature-Driven Scientific Data Curation",
-    description:
-      "Using domain-adapted language models, ontologies, and knowledge graphs to transform scientific literature into structured, traceable process and sustainability data.",
-       "Data serves as the fuel for intelligent systems. Customized open-source LLMs can transform vast amounts of unstructured scientific information into structured, machine-readable data, enabling systematic knowledge discovery, modeling, optimization, and sustainability assessment.",
+    description: "Using domain-adapted language models, ontologies, and knowledge graphs to transform scientific literature into structured, traceable process and sustainability data. Data serves as the fuel for intelligent systems. Customized open-source LLMs can transform vast amounts of unstructured scientific information into structured, machine-readable data, enabling systematic knowledge discovery, modeling, optimization, and sustainability assessment.",
   },
   {
     icon: "🏭",
     title: "Bridging Knowledge Gaps Between Academia and Industry",
-    description:
-      "Translating laboratory research into pilot- and industrial-scale solutions through process simulation, experimental validation, optimization, and sustainability assessment.",
-      "A significant gap remains between academic research outcomes and their practical implementation at industrial scale. ",
-      "Bridging this gap requires translating fragmented scientific knowledge into actionable engineering insights. ",
-      "Large language models (LLMs) can systematically mine scientific literature and transform unstructured information into structured, machine-readable data on materials, process conditions, performance, costs, and environmental impacts.", 
-      "Integrating this knowledge with process modeling, scale-up, optimization, and sustainability assessment can accelerate the transition from laboratory discoveries to pilot- and industrial-scale implementation, enabling technically feasible, economically viable, sustainable, and circular systems.",
-    "Here are couple of domains worked on:"
+    description: "Translating laboratory research into pilot- and industrial-scale solutions through process simulation, experimental validation, optimization, and sustainability assessment. A significant gap remains between academic research outcomes and their practical implementation at industrial scale. Bridging this gap requires translating fragmented scientific knowledge into actionable engineering insights. Large language models (LLMs) can systematically mine scientific literature and transform unstructured information into structured, machine-readable data on materials, process conditions, performance, costs, and environmental impacts. Integrating this knowledge with process modeling, scale-up, optimization, and sustainability assessment can accelerate the transition from laboratory discoveries to pilot- and industrial-scale implementation, enabling technically feasible, economically viable, sustainable, and circular systems.",
   },
 ],
 

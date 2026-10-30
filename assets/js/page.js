@@ -150,6 +150,12 @@ function renderResearch(main) {
   const projects  = INFO.researchProjects || [];
   const software  = INFO.software || [];
 
+  const headerFigures = [
+    { src: "../assets/iterativeproject.png", alt: "Iterative research project framework" },
+    { src: "../assets/goal.png", alt: "Research goals framework" },
+    { src: "../assets/lab.png", alt: "Research laboratory vision" },
+  ];
+
   const researchFigures = [
     { src: "../assets/recycle_bert.png", alt: "Recycle-BERT research framework" },
     { src: "../assets/battery.png", alt: "Battery recycling research framework" },
@@ -224,6 +230,13 @@ function renderResearch(main) {
 
   main.innerHTML = `
     <div class="container">
+      <div class="research-header-figures">
+        ${headerFigures.map(fig => `
+          <figure class="research-interest-figure research-zoom-trigger" tabindex="0" role="button" aria-label="Enlarge ${fig.alt}">
+            <img src="${fig.src}" alt="${fig.alt}" loading="lazy">
+          </figure>
+        `).join('')}
+      </div>
       ${interests.length ? `
         <h2 class="section-title">Research Interests</h2>
         <div class="rp-list" style="margin-bottom:3rem;">${interestCards}</div>

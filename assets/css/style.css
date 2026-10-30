@@ -1204,3 +1204,44 @@ h1, h2, h3, h4 {
   }
 }
 
+
+
+/* Three research figures below Research Interests */
+.research-image-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+  margin: 0 0 3rem;
+}
+
+.research-image-row figure {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: .6rem;
+  background: #fff;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.research-image-row img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .research-image-row {
+    grid-template-columns: 1fr;
+  }
+
+  .research-image-row img {
+    height: auto;
+    max-height: 360px;
+  }
+}

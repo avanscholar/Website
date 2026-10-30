@@ -150,11 +150,24 @@ function renderResearch(main) {
   const projects  = INFO.researchProjects || [];
   const software  = INFO.software || [];
 
-  const interestCards = interests.map(r => `
-    <div class="research-card">
-      ${r.icon ? `<div class="research-icon">${r.icon}</div>` : ''}
-      <h3>${r.title}</h3>
-      <p>${r.description}</p>
+  const researchFigures = [
+    { src: "../assets/recycle_bert.png", alt: "Recycle-BERT research framework" },
+    { src: "../assets/battery.png", alt: "Battery recycling research framework" },
+    { src: "../assets/gasification.png", alt: "Biomass gasification research framework" },
+  ];
+
+  const interestCards = interests.map((r, i) => `
+    <div class="research-interest-block">
+      <div class="research-card">
+        ${r.icon ? `<div class="research-icon">${r.icon}</div>` : ''}
+        <h3>${r.title}</h3>
+        <p>${r.description}</p>
+      </div>
+      ${researchFigures[i] ? `
+        <figure class="research-interest-figure">
+          <img src="${researchFigures[i].src}" alt="${researchFigures[i].alt}" loading="lazy">
+        </figure>
+      ` : ''}
     </div>
   `).join('');
 
@@ -209,12 +222,7 @@ function renderResearch(main) {
     <div class="container">
       ${interests.length ? `
         <h2 class="section-title">Research Interests</h2>
-        <div class="rp-list" style="margin-bottom:1.5rem;">${interestCards}</div>
-        <div class="research-image-row">
-          <figure><img src="../assets/recycle_bert.png" alt="Recycle-BERT research framework" loading="lazy"></figure>
-          <figure><img src="../assets/battery.png" alt="Battery recycling research framework" loading="lazy"></figure>
-          <figure><img src="../assets/gasification.png" alt="Biomass gasification research framework" loading="lazy"></figure>
-        </div>
+        <div class="rp-list" style="margin-bottom:3rem;">${interestCards}</div>
       ` : ''}
       ${software.length ? `
         <h2 class="section-title">Software Tools</h2>

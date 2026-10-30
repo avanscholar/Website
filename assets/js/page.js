@@ -163,10 +163,14 @@ function renderResearch(main) {
         <h3>${r.title}</h3>
         <p>${r.description}</p>
       </div>
-      ${researchFigures[i] ? `
-        <figure class="research-interest-figure">
-          <img src="${researchFigures[i].src}" alt="${researchFigures[i].alt}" loading="lazy">
-        </figure>
+      ${i === 0 ? `
+        <div class="research-interest-figures">
+          ${researchFigures.map(fig => `
+            <figure class="research-interest-figure">
+              <img src="${fig.src}" alt="${fig.alt}" loading="lazy">
+            </figure>
+          `).join('')}
+        </div>
       ` : ''}
     </div>
   `).join('');

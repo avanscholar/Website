@@ -77,22 +77,21 @@ const INFO = {
     icon: "♻️",
     title: "AI for Product End-of-Life Modeling",
     description:
-      "Developing AI-driven frameworks to identify, compare, and optimize recycling, reuse, recovery, and disposal pathways for products and materials.",
-      "There are multiple frameworks demostrated on various products:",
+      "Developing AI-driven computational frameworks that systematically identify, evaluate, and optimize alternative recycling, reuse, recovery, and disposal pathways across the product life cycle. These frameworks integrate material and process knowledge with environmental, economic, and technical performance metrics to enable sustainable and circular-by-design decisions. Their applicability has been demonstrated across diverse products and material systems, providing a scalable approach for transitioning from conventional end-of-life management toward resource-efficient circular systems.",
   },
   {
     icon: "⚙️",
     title: "Explainable AI for Process Modeling",
     description:
-      "Building interpretable machine-learning models that predict process performance, identify influential operating variables, and support transparent process optimization.",
-      "Waste-to-value added products with recycling of unreacted raw material modeling, here are examples:",
+      "Developing interpretable machine-learning and process-modeling frameworks to predict process performance, identify influential operating variables, and optimize waste-to-value pathways. A key contribution is the design of **closed-loop process systems**, where unreacted raw materials and process intermediates are recovered and recirculated back into the process rather than discarded. This integration reduces virgin material demand and waste generation while improving resource efficiency, product recovery, and overall process sustainability.",
   },
   {
     icon: "🤖",
     title: "AI for Sustainable and Circular Systems Engineering",
     description:
-      "Integrating AI, thermodynamic modeling, superstructure generation, and multi-objective optimization to discover profitable, circular, and net-zero process pathways.",
-      "Developing ciruclar network for a given product's life cycle to discover sustainable and circular system.",
+      "**Process-level:** Developing AI-driven process frameworks by integrating thermodynamic modeling, superstructure generation, and multi-objective optimization to discover economically viable, circular, and net-zero process pathways.
+
+**System-level:** Developing AI-driven life-cycle network frameworks by integrating production, use, reuse, recycling, recovery, and end-of-life pathways to discover sustainable material flows and circular product systems.",
   },
   {
     icon: "📚",

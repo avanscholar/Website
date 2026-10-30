@@ -156,10 +156,10 @@ function renderResearch(main) {
     { src: "../assets/lab.png", alt: "Research laboratory vision" },
   ];
 
-  const researchFigures = [
-    { src: "../assets/recycle_bert.png", alt: "Recycle-BERT research framework" },
-    { src: "../assets/battery.png", alt: "Battery recycling research framework" },
-    { src: "../assets/gasification.png", alt: "Biomass gasification research framework" },
+  const endOfLifeFigures = [
+    { src: "../assets/recycle.png", alt: "Product end-of-life recycling framework" },
+    { src: "../assets/sustain.png", alt: "Sustainable product end-of-life framework" },
+    { src: "../assets/allocation.png", alt: "Product end-of-life allocation framework" },
   ];
 
   const interestCards = interests.map((r, i) => `
@@ -170,7 +170,7 @@ function renderResearch(main) {
         <p>${r.description}</p>
       </div>
       <div class="research-header-figures">
-        ${headerFigures.map(fig => `
+        ${(i === 0 ? endOfLifeFigures : headerFigures).map(fig => `
           <figure class="research-interest-figure research-zoom-trigger" tabindex="0" role="button" aria-label="Enlarge ${fig.alt}">
             <img src="${fig.src}" alt="${fig.alt}" loading="lazy">
           </figure>

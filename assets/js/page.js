@@ -230,15 +230,15 @@ function renderResearch(main) {
 
   main.innerHTML = `
     <div class="container">
-      <div class="research-header-figures">
-        ${headerFigures.map(fig => `
-          <figure class="research-interest-figure research-zoom-trigger" tabindex="0" role="button" aria-label="Enlarge ${fig.alt}">
-            <img src="${fig.src}" alt="${fig.alt}" loading="lazy">
-          </figure>
-        `).join('')}
-      </div>
       ${interests.length ? `
         <h2 class="section-title">Research Interests</h2>
+        <div class="research-header-figures">
+          ${headerFigures.map(fig => `
+            <figure class="research-interest-figure research-zoom-trigger" tabindex="0" role="button" aria-label="Enlarge ${fig.alt}">
+              <img src="${fig.src}" alt="${fig.alt}" loading="lazy">
+            </figure>
+          `).join('')}
+        </div>
         <div class="rp-list" style="margin-bottom:3rem;">${interestCards}</div>
       ` : ''}
       ${software.length ? `

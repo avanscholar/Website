@@ -209,7 +209,12 @@ function renderResearch(main) {
     <div class="container">
       ${interests.length ? `
         <h2 class="section-title">Research Interests</h2>
-        <div class="rp-list" style="margin-bottom:3rem;">${interestCards}</div>
+        <div class="rp-list" style="margin-bottom:1.5rem;">${interestCards}</div>
+        <div class="research-image-row">
+          <figure><img src="../assets/recycle_bert.png" alt="Recycle-BERT research framework" loading="lazy"></figure>
+          <figure><img src="../assets/battery.png" alt="Battery recycling research framework" loading="lazy"></figure>
+          <figure><img src="../assets/gasification.png" alt="Biomass gasification research framework" loading="lazy"></figure>
+        </div>
       ` : ''}
       ${software.length ? `
         <h2 class="section-title">Software Tools</h2>

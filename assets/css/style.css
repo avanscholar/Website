@@ -1230,3 +1230,31 @@ h1, h2, h3, h4 {
   max-height: 440px;
   object-fit: contain;
 }
+
+
+/* Three figures directly after the first Research Interest */
+.research-interest-figures {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.research-interest-figures .research-interest-figure {
+  min-width: 0;
+}
+
+.research-interest-figures .research-interest-figure img {
+  height: 260px;
+  max-height: 260px;
+}
+
+@media (max-width: 760px) {
+  .research-interest-figures {
+    grid-template-columns: 1fr;
+  }
+
+  .research-interest-figures .research-interest-figure img {
+    height: auto;
+    max-height: 360px;
+  }
+}

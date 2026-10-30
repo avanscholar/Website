@@ -77,39 +77,40 @@ const INFO = {
     icon: "♻️",
     title: "AI for Product End-of-Life Modeling",
     description:
-      "Developing AI-driven frameworks to identify, compare, and optimize recycling, reuse, recovery, and disposal pathways for products and materials."
+      "Developing AI-driven frameworks to identify, compare, and optimize recycling, reuse, recovery, and disposal pathways for products and materials.",
       "There are multiple frameworks demostrated on various products:",
   },
   {
     icon: "⚙️",
     title: "Explainable AI for Process Modeling",
     description:
-      "Building interpretable machine-learning models that predict process performance, identify influential operating variables, and support transparent process optimization."
+      "Building interpretable machine-learning models that predict process performance, identify influential operating variables, and support transparent process optimization.",
       "Waste-to-value added products with recycling of unreacted raw material modeling, here are examples:",
   },
   {
     icon: "🤖",
     title: "AI for Sustainable and Circular Systems Engineering",
     description:
-      "Integrating AI, thermodynamic modeling, superstructure generation, and multi-objective optimization to discover profitable, circular, and net-zero process pathways."
+      "Integrating AI, thermodynamic modeling, superstructure generation, and multi-objective optimization to discover profitable, circular, and net-zero process pathways.",
       "Developing ciruclar network for a given product's life cycle to discover sustainable and circular system.",
   },
   {
     icon: "📚",
     title: "AI- and Literature-Driven Scientific Data Curation",
     description:
-      "Using domain-adapted language models, ontologies, and knowledge graphs to transform scientific literature into structured, traceable process and sustainability data."
-       "Data acts as fuel for data-driven intellegent decision making, to curate the structured data from unstructured data using customized open-source LLMs.",
+      "Using domain-adapted language models, ontologies, and knowledge graphs to transform scientific literature into structured, traceable process and sustainability data.",
+       "Data serves as the fuel for intelligent systems. Customized open-source LLMs can transform vast amounts of unstructured scientific information into structured, machine-readable data, enabling systematic knowledge discovery, modeling, optimization, and sustainability assessment.",
   },
   {
     icon: "🏭",
     title: "Bridging Knowledge Gaps Between Academia and Industry",
     description:
-      "Translating laboratory research into pilot- and industrial-scale solutions through process simulation, experimental validation, optimization, and sustainability assessment."
-      "A significant gap remains between academic research outcomes and their practical implementation at industrial scale. "
-      "Bridging this gap requires translating fragmented scientific knowledge into actionable engineering insights. "
-      "Large language models (LLMs) can systematically mine scientific literature and transform unstructured information into structured, machine-readable data on materials, process conditions, performance, costs, and environmental impacts." 
+      "Translating laboratory research into pilot- and industrial-scale solutions through process simulation, experimental validation, optimization, and sustainability assessment.",
+      "A significant gap remains between academic research outcomes and their practical implementation at industrial scale. ",
+      "Bridging this gap requires translating fragmented scientific knowledge into actionable engineering insights. ",
+      "Large language models (LLMs) can systematically mine scientific literature and transform unstructured information into structured, machine-readable data on materials, process conditions, performance, costs, and environmental impacts.", 
       "Integrating this knowledge with process modeling, scale-up, optimization, and sustainability assessment can accelerate the transition from laboratory discoveries to pilot- and industrial-scale implementation, enabling technically feasible, economically viable, sustainable, and circular systems.",
+    "Here are couple of domains worked on:"
   },
 ],
 

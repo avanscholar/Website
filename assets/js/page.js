@@ -162,6 +162,12 @@ function renderResearch(main) {
     { src: "../assets/allocation.png", alt: "Product end-of-life allocation framework" },
   ];
 
+  const processModelingFigures = [
+    { src: "../assets/methanol.png", alt: "Methanol process modeling framework" },
+    { src: "../assets/gasification.png", alt: "Gasification process modeling framework" },
+    null,
+  ];
+
   const interestCards = interests.map((r, i) => `
     <div class="research-interest-block">
       <div class="research-card">
@@ -170,11 +176,11 @@ function renderResearch(main) {
         <p>${r.description}</p>
       </div>
       <div class="research-header-figures">
-        ${(i === 0 ? endOfLifeFigures : headerFigures).map(fig => `
+        ${(i === 0 ? endOfLifeFigures : i === 1 ? processModelingFigures : headerFigures).map(fig => fig ? `
           <figure class="research-interest-figure research-zoom-trigger" tabindex="0" role="button" aria-label="Enlarge ${fig.alt}">
             <img src="${fig.src}" alt="${fig.alt}" loading="lazy">
           </figure>
-        `).join('')}
+        ` : `<div class="research-interest-figure research-figure-empty" aria-hidden="true"></div>`).join('')}
       </div>
     </div>
   `).join('');

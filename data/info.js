@@ -16,6 +16,10 @@ const INFO = {
   email: "akuma469@asu.edu",
   mobile: "+1 602358----",
   lastUpdated: "May 2026",
+  scholarStats: {
+    hIndex: null,       // Enter current Google Scholar h-index, e.g. 10
+    citations: null,    // Enter current Google Scholar citation count, e.g. 250
+  },
 
   // ----------------------------------------------------------
   // MISSION

@@ -491,30 +491,55 @@ function renderGallery(main) {
     return;
   }
 
-  const categories = ['All', ...new Set(photos.map(p => p.category).filter(Boolean))];
+  function albumName(category) {
+    const c = (category || '').toLowerCase();
+    if (c.includes('conference') || c.includes('aiche')) return 'Conferences';
+    if (c.includes('outing') || c.includes('entertain')) return 'Entertainment & Outings';
+    if (c.includes('cricket')) return 'Cricket';
+    if (c.includes('graduate')) return 'Graduate Seminar';
+    if (c.includes('scematic') || c.includes('schematic')) return 'Schematic Pictures';
+    return category || 'Other';
+  }
 
-  const catBtns = categories.map((c, i) => {
-    const n = c === 'All' ? photos.length : photos.filter(p => p.category === c).length;
-    return `<button class="pub-filter-btn${i === 0 ? ' active' : ''}" data-cat="${c}">${c} <span style="opacity:.6">(${n})</span></button>`;
+  const albums = new Map();
+  photos.forEach((photo, index) => {
+    const name = albumName(photo.category);
+    if (!albums.has(name)) albums.set(name, []);
+    albums.get(name).push({ ...photo, originalIndex: index });
+  });
+
+  const albumCards = [...albums.entries()].map(([name, items]) => {
+    const cover = items[0];
+    return `
+      <button type="button" class="gallery-album-card" data-album="${name}">
+        <div class="gallery-album-image">
+          <img src="${cover.thumb || cover.url}" alt="${name}" loading="lazy">
+          <span class="gallery-album-count">${items.length} photo${items.length === 1 ? '' : 's'}</span>
+        </div>
+        <div class="gallery-album-info">
+          <h3>${name}</h3>
+          <p>Open album</p>
+        </div>
+      </button>
+    `;
   }).join('');
-
-  const cards = photos.map((photo, i) => `
-    <div class="gallery-card" data-index="${i}" data-cat="${photo.category || ''}">
-      ${photo.category ? `<span class="gallery-card-cat">${photo.category}</span>` : ''}
-      <img src="${photo.thumb || photo.url}" alt="${photo.caption || ''}" loading="lazy">
-      <div class="gallery-card-overlay">
-        <p class="gallery-card-caption">${photo.caption || ''}</p>
-      </div>
-    </div>
-  `).join('');
 
   main.innerHTML = `
     <div class="container">
-      <div class="gallery-filters">${catBtns}</div>
-      <div class="gallery-grid">${cards}</div>
+      <div id="gallery-albums" class="gallery-albums">${albumCards}</div>
+
+      <div id="gallery-album-view" class="gallery-album-view" hidden>
+        <div class="gallery-album-toolbar">
+          <button type="button" id="gallery-back" class="pub-filter-btn">&larr; All albums</button>
+          <div>
+            <h2 id="gallery-album-title" class="section-title" style="margin-bottom:.15rem;"></h2>
+            <p id="gallery-album-meta" style="font-size:.8rem;color:var(--clr-muted);"></p>
+          </div>
+        </div>
+        <div id="gallery-photo-grid" class="gallery-grid"></div>
+      </div>
     </div>
 
-    <!-- Lightbox (outside container, full-viewport) -->
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
       <button class="lightbox-btn lightbox-prev" id="lb-prev" aria-label="Previous photo">&#8592;</button>
       <div class="lightbox-inner">
@@ -527,36 +552,64 @@ function renderGallery(main) {
     </div>
   `;
 
-  // ---- Category filter ----
-  main.querySelectorAll('.pub-filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      main.querySelectorAll('.pub-filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.cat;
-      main.querySelectorAll('.gallery-card').forEach(card => {
-        card.style.display = (cat === 'All' || card.dataset.cat === cat) ? '' : 'none';
-      });
-    });
-  });
+  const albumsEl = main.querySelector('#gallery-albums');
+  const albumView = main.querySelector('#gallery-album-view');
+  const photoGrid = main.querySelector('#gallery-photo-grid');
+  const albumTitle = main.querySelector('#gallery-album-title');
+  const albumMeta = main.querySelector('#gallery-album-meta');
+  const backBtn = main.querySelector('#gallery-back');
 
-  // ---- Lightbox ----
-  const lightbox = document.getElementById('lightbox');
-  const lbImg    = document.getElementById('lb-img');
-  const lbCap    = document.getElementById('lb-caption');
-  const lbCtr    = document.getElementById('lb-counter');
-  const lbClose  = document.getElementById('lb-close');
-  const lbPrev   = document.getElementById('lb-prev');
-  const lbNext   = document.getElementById('lb-next');
-
+  let activePhotos = [];
   let current = 0;
 
+  function showAlbum(name) {
+    activePhotos = albums.get(name) || [];
+    albumTitle.textContent = name;
+    albumMeta.textContent = `${activePhotos.length} photo${activePhotos.length === 1 ? '' : 's'}`;
+    photoGrid.innerHTML = activePhotos.map((photo, i) => `
+      <button type="button" class="gallery-card" data-index="${i}" aria-label="Open ${photo.caption || name}">
+        <img src="${photo.thumb || photo.url}" alt="${photo.caption || name}" loading="lazy">
+        <div class="gallery-card-overlay">
+          <p class="gallery-card-caption">${photo.caption || ''}</p>
+        </div>
+      </button>
+    `).join('');
+
+    albumsEl.hidden = true;
+    albumView.hidden = false;
+
+    photoGrid.querySelectorAll('.gallery-card').forEach(card => {
+      card.addEventListener('click', () => open(parseInt(card.dataset.index, 10)));
+    });
+  }
+
+  function showAlbums() {
+    albumView.hidden = true;
+    albumsEl.hidden = false;
+    activePhotos = [];
+  }
+
+  main.querySelectorAll('.gallery-album-card').forEach(card => {
+    card.addEventListener('click', () => showAlbum(card.dataset.album));
+  });
+  backBtn.addEventListener('click', showAlbums);
+
+  const lightbox = main.querySelector('#lightbox');
+  const lbImg = main.querySelector('#lb-img');
+  const lbCap = main.querySelector('#lb-caption');
+  const lbCtr = main.querySelector('#lb-counter');
+  const lbClose = main.querySelector('#lb-close');
+  const lbPrev = main.querySelector('#lb-prev');
+  const lbNext = main.querySelector('#lb-next');
+
   function open(index) {
-    current = ((index % photos.length) + photos.length) % photos.length;
-    const p = photos[current];
-    lbImg.src    = p.url;
-    lbImg.alt    = p.caption || '';
-    lbCap.textContent = p.caption || '';
-    lbCtr.textContent = `${current + 1} / ${photos.length}`;
+    if (!activePhotos.length) return;
+    current = ((index % activePhotos.length) + activePhotos.length) % activePhotos.length;
+    const photo = activePhotos[current];
+    lbImg.src = photo.url;
+    lbImg.alt = photo.caption || '';
+    lbCap.textContent = photo.caption || '';
+    lbCtr.textContent = `${current + 1} / ${activePhotos.length}`;
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
     lbClose.focus();
@@ -568,10 +621,6 @@ function renderGallery(main) {
     setTimeout(() => { lbImg.src = ''; }, 250);
   }
 
-  main.querySelectorAll('.gallery-card').forEach(card => {
-    card.addEventListener('click', () => open(parseInt(card.dataset.index, 10)));
-  });
-
   lbClose.addEventListener('click', close);
   lbPrev.addEventListener('click', () => open(current - 1));
   lbNext.addEventListener('click', () => open(current + 1));
@@ -579,11 +628,12 @@ function renderGallery(main) {
 
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape')      { e.preventDefault(); close(); }
-    if (e.key === 'ArrowLeft')   { e.preventDefault(); open(current - 1); }
-    if (e.key === 'ArrowRight')  { e.preventDefault(); open(current + 1); }
+    if (e.key === 'Escape') { e.preventDefault(); close(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); open(current - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); open(current + 1); }
   });
 }
+
 
 // ============================================================
 // PAGE REGISTRY

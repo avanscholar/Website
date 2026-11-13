@@ -150,10 +150,12 @@ function buildHero() {
 function buildFooter() {
   const footer = $('site-footer');
   if (!footer) return;
-  const yr = new Date().getFullYear();
+  const now = new Date();
+  const yr = now.getFullYear();
+  const lastUpdated = now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
   footer.innerHTML = `
     <p>&copy; ${yr} ${INFO.name} &middot; ${INFO.institution}</p>
-    <p style="margin-top:.4rem;font-size:.73rem;opacity:.7;">Last updated: ${INFO.lastUpdated || yr}</p>
+    <p style="margin-top:.4rem;font-size:.73rem;opacity:.7;">Last updated: ${lastUpdated}</p>
   `;
 }
 

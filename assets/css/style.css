@@ -1526,3 +1526,30 @@ h1, h2, h3, h4 {
   column-count: 1 !important;
   columns: auto !important;
 }
+
+
+/* About Dr. Avan directly below the mission/photo hero */
+.hero-bio-below {
+  margin-top: 2.25rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--clr-border);
+  width: 100%;
+}
+
+.hero-bio-below h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+  color: var(--clr-primary);
+}
+
+.hero-bio-below .about-body {
+  column-count: 1 !important;
+  columns: auto !important;
+  max-width: none;
+}
+
+.hero-bio-below .about-body p {
+  font-size: .9rem;
+  line-height: 1.7;
+  margin-bottom: .85rem;
+}

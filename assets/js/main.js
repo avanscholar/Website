@@ -113,16 +113,19 @@ function buildHero() {
         ${INFO.mission ? `<p class="hero-mission">${INFO.mission}</p>` : ''}
         ${tags ? `<div class="hero-tags">${tags}</div>` : ''}
         <div class="hero-links">${buttons}</div>
-        <div class="visitor-card" aria-label="Website visitor count">
-          <span class="visitor-icon" aria-hidden="true">&#128065;</span>
-          <span class="visitor-label">Total Visitors</span>
-          <strong id="visitor-count" class="visitor-count">—</strong>
-        </div>
       </div>
 
       <div class="hero-bio hero-bio-below">
         <h2>About Dr. Avan</h2>
         <div class="about-body">${bioParas}</div>
+      </div>
+
+      <div class="visitor-bottom">
+        <div class="visitor-card" aria-label="Website visitor count">
+          <span class="visitor-icon" aria-hidden="true">&#128065;</span>
+          <span class="visitor-label">Total Visitors</span>
+          <strong id="visitor-count" class="visitor-count">—</strong>
+        </div>
       </div>
     </div>
   `;

@@ -1825,3 +1825,10 @@ h1, h2, h3, h4 {
 .visitor-card-unavailable {
   opacity: .7;
 }
+
+
+.visitor-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}

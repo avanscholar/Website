@@ -1729,3 +1729,52 @@ h1, h2, h3, h4 {
     grid-column: auto;
   }
 }
+
+
+/* Homepage requested layout: identity/photo row, resources full-width below */
+.hero-top-two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-photo-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-resources-full {
+  margin-top: 1.35rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--clr-border);
+}
+
+.hero-resources-full .hero-mission {
+  max-width: none;
+  margin-bottom: 1rem;
+}
+
+.hero-resources-full .hero-tags {
+  margin-bottom: 1rem;
+}
+
+.hero-resources-full .hero-links {
+  gap: .5rem;
+}
+
+@media (max-width: 720px) {
+  .hero-top-two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo-right {
+    justify-content: center;
+    grid-row: 1;
+  }
+
+  .hero-top-two-column .hero-identity {
+    grid-row: 2;
+  }
+}

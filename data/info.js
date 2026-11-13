@@ -779,6 +779,12 @@ const INFO = {
       category: "AIChE 2026 Minneapolis",
     },
     {
+      url:     "../assets/aiche_6.jpeg",
+      thumb:   "../assets/aiche_6.jpeg",
+      caption: "More moments and connections from the AIChE 2026 Annual Meeting in Minneapolis.",
+      category: "AIChE 2026 Minneapolis",
+    },
+    {
       url:     "../assets/scene_1.jpeg",
       thumb:   "../assets/scene_1.jpeg",
       caption: "Planet over profit",

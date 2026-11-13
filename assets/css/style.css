@@ -1778,3 +1778,15 @@ h1, h2, h3, h4 {
     grid-row: 2;
   }
 }
+
+
+/* Keep portrait immediately to the right of the homepage identity block */
+.hero-top-two-column {
+  grid-template-columns: max-content 210px;
+  justify-content: start;
+  gap: 2rem;
+}
+
+.hero-photo-right {
+  justify-content: flex-start;
+}

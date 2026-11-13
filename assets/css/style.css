@@ -1634,19 +1634,3 @@ h1, h2, h3, h4 {
     column-count: 1;
   }
 }
-
-
-/* Use nearly the full browser width on the homepage only */
-.section-hero > .container {
-  width: 100%;
-  max-width: none;
-  padding-left: clamp(18px, 2.2vw, 36px);
-  padding-right: clamp(18px, 2.2vw, 36px);
-}
-
-@media (min-width: 1400px) {
-  .section-hero .hero-grid {
-    grid-template-columns: minmax(360px, .68fr) minmax(0, 1.32fr);
-    gap: clamp(28px, 2.5vw, 48px);
-  }
-}

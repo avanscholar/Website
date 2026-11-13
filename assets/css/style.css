@@ -1832,3 +1832,54 @@ h1, h2, h3, h4 {
   justify-content: center;
   margin-top: 1.5rem;
 }
+
+
+/* Research impact strip above About Dr. Avan */
+.research-impact {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .9rem;
+  margin-top: 1.5rem;
+}
+
+.impact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 92px;
+  padding: .9rem 1rem;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid var(--clr-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+}
+
+.impact-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--clr-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.impact-value {
+  color: var(--clr-primary);
+  font-size: 1.65rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.impact-label {
+  margin-top: .4rem;
+  color: var(--clr-muted);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+
+@media (max-width: 620px) {
+  .research-impact {
+    grid-template-columns: 1fr;
+  }
+}

@@ -84,6 +84,11 @@ function buildHero() {
   const institution = [INFO.department, INFO.institution]
     .filter(Boolean).join(' &middot; ');
 
+  const bioParas = (Array.isArray(INFO.bio) ? INFO.bio : [INFO.bio])
+    .filter(Boolean)
+    .map(p => `<p>${p}</p>`)
+    .join('');
+
   section.innerHTML = `
     <div class="container">
       <div class="hero-grid">
@@ -95,40 +100,26 @@ function buildHero() {
           ${tags ? `<div class="hero-tags">${tags}</div>` : ''}
           <div class="hero-links">${buttons}</div>
         </div>
-        <div class="hero-photo-wrap">
-          <img
-            class="hero-photo"
-            src="${INFO.photo}"
-            alt="Photo of ${INFO.name}"
-            loading="eager"
-            onerror="this.style.display='none'"
-          >
+        <div class="hero-about-side">
+          <div class="hero-photo-wrap">
+            <img
+              class="hero-photo"
+              src="${INFO.photo}"
+              alt="Photo of ${INFO.name}"
+              loading="eager"
+              onerror="this.style.display='none'"
+            >
+          </div>
+          <div class="hero-bio">
+            <h2>About Dr. Avan</h2>
+            <div class="about-body">${bioParas}</div>
+          </div>
         </div>
       </div>
     </div>
   `;
 }
 
-
-// ============================================================
-// ABOUT — merged into the home page
-// ============================================================
-function buildAbout() {
-  const section = $('about');
-  if (!section) return;
-
-  const paras = (Array.isArray(INFO.bio) ? INFO.bio : [INFO.bio])
-    .filter(Boolean)
-    .map(p => `<p>${p}</p>`)
-    .join('');
-
-  section.innerHTML = `
-    <div class="container">
-      <h2 class="section-title">About Dr. Avan</h2>
-      <div class="about-body">${paras}</div>
-    </div>
-  `;
-}
 
 function buildFooter() {
   const footer = $('site-footer');
@@ -156,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.title = `${INFO.name} | ${INFO.title}`;
   buildNav();
   buildHero();
-  buildAbout();
   buildFooter();
   initScrollTop();
 });

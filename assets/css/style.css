@@ -1790,3 +1790,38 @@ h1, h2, h3, h4 {
 .hero-photo-right {
   justify-content: flex-start;
 }
+
+
+/* Homepage total visitor counter */
+.visitor-card {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  margin-top: 1rem;
+  padding: .55rem .8rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-full);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  font-size: .76rem;
+}
+
+.visitor-icon {
+  font-size: .9rem;
+}
+
+.visitor-label {
+  color: var(--clr-muted);
+  font-weight: 600;
+}
+
+.visitor-count {
+  min-width: 2ch;
+  color: var(--clr-accent);
+  font-size: .9rem;
+  font-weight: 800;
+}
+
+.visitor-card-unavailable {
+  opacity: .7;
+}

@@ -1519,3 +1519,10 @@ h1, h2, h3, h4 {
     text-align: center;
   }
 }
+
+
+/* Keep About Dr. Avan biography in one text column */
+.hero-bio .about-body {
+  column-count: 1 !important;
+  columns: auto !important;
+}

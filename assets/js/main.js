@@ -115,6 +115,21 @@ function buildHero() {
         <div class="hero-links">${buttons}</div>
       </div>
 
+      <div class="research-impact" aria-label="Research impact">
+        <a class="impact-card" href="${INFO.links.scholar}" target="_blank" rel="noopener">
+          <span class="impact-value">${INFO.scholarStats?.hIndex ?? '—'}</span>
+          <span class="impact-label">H-index</span>
+        </a>
+        <a class="impact-card" href="${INFO.links.scholar}" target="_blank" rel="noopener">
+          <span class="impact-value">${INFO.scholarStats?.citations != null ? Number(INFO.scholarStats.citations).toLocaleString() : '—'}</span>
+          <span class="impact-label">Citations</span>
+        </a>
+        <a class="impact-card" href="page/publications.html">
+          <span class="impact-value">${(INFO.publications || []).length}</span>
+          <span class="impact-label">Research Outcomes</span>
+        </a>
+      </div>
+
       <div class="hero-bio hero-bio-below">
         <h2>About Dr. Avan</h2>
         <div class="about-body">${bioParas}</div>

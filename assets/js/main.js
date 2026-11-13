@@ -100,21 +100,20 @@ function buildHero() {
           ${tags ? `<div class="hero-tags">${tags}</div>` : ''}
           <div class="hero-links">${buttons}</div>
         </div>
-        <div class="hero-about-side">
-          <div class="hero-photo-wrap">
-            <img
-              class="hero-photo"
-              src="${INFO.photo}"
-              alt="Photo of ${INFO.name}"
-              loading="eager"
-              onerror="this.style.display='none'"
-            >
-          </div>
-          <div class="hero-bio">
-            <h2>About Dr. Avan</h2>
-            <div class="about-body">${bioParas}</div>
-          </div>
+        <div class="hero-photo-wrap">
+          <img
+            class="hero-photo"
+            src="${INFO.photo}"
+            alt="Photo of ${INFO.name}"
+            loading="eager"
+            onerror="this.style.display='none'"
+          >
         </div>
+      </div>
+
+      <div class="hero-bio hero-bio-below">
+        <h2>About Dr. Avan</h2>
+        <div class="about-body">${bioParas}</div>
       </div>
     </div>
   `;

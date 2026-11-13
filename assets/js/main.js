@@ -91,16 +91,15 @@ function buildHero() {
 
   section.innerHTML = `
     <div class="container">
-      <div class="hero-grid">
-        <div class="hero-info">
+      <div class="hero-grid hero-grid-optimized">
+        <div class="hero-info hero-identity">
           <h1>${INFO.name}</h1>
           <p class="hero-subtitle">${INFO.title}</p>
           <p class="hero-institution">${institution}</p>
           ${INFO.mission ? `<p class="hero-mission">${INFO.mission}</p>` : ''}
-          ${tags ? `<div class="hero-tags">${tags}</div>` : ''}
-          <div class="hero-links">${buttons}</div>
         </div>
-        <div class="hero-photo-wrap">
+
+        <div class="hero-photo-wrap hero-photo-center">
           <img
             class="hero-photo"
             src="${INFO.photo}"
@@ -108,6 +107,13 @@ function buildHero() {
             loading="eager"
             onerror="this.style.display='none'"
           >
+        </div>
+
+        <div class="hero-resources">
+          <h2 class="hero-resources-title">Research Focus</h2>
+          ${tags ? `<div class="hero-tags">${tags}</div>` : ''}
+          <h2 class="hero-resources-title hero-connect-title">Connect</h2>
+          <div class="hero-links">${buttons}</div>
         </div>
       </div>
 

@@ -113,6 +113,11 @@ function buildHero() {
         ${INFO.mission ? `<p class="hero-mission">${INFO.mission}</p>` : ''}
         ${tags ? `<div class="hero-tags">${tags}</div>` : ''}
         <div class="hero-links">${buttons}</div>
+        <div class="visitor-card" aria-label="Website visitor count">
+          <span class="visitor-icon" aria-hidden="true">&#128065;</span>
+          <span class="visitor-label">Total Visitors</span>
+          <strong id="visitor-count" class="visitor-count">—</strong>
+        </div>
       </div>
 
       <div class="hero-bio hero-bio-below">
@@ -143,6 +148,39 @@ function initScrollTop() {
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
+
+
+async function initVisitorCounter() {
+  const el = $('visitor-count');
+  if (!el) return;
+
+  const key = 'avan-kumar-academic-website-home-visitors';
+  const base = 'https://countapi.mileshilliard.com/api/v1';
+  let endpoint = `${base}/get/${key}`;
+
+  try {
+    if (!sessionStorage.getItem('avan-home-visit-counted')) {
+      sessionStorage.setItem('avan-home-visit-counted', '1');
+      endpoint = `${base}/hit/${key}`;
+    }
+
+    let response = await fetch(endpoint, { mode: 'cors', cache: 'no-store' });
+
+    // A new counter does not exist until its first hit.
+    if (response.status === 404 && endpoint.includes('/get/')) {
+      response = await fetch(`${base}/hit/${key}`, { mode: 'cors', cache: 'no-store' });
+    }
+
+    if (!response.ok) throw new Error('Visitor counter unavailable');
+    const data = await response.json();
+    const value = Number(data.value);
+    el.textContent = Number.isFinite(value) ? value.toLocaleString() : '—';
+  } catch (error) {
+    el.textContent = '—';
+    el.closest('.visitor-card')?.classList.add('visitor-card-unavailable');
+  }
+}
+
 // ============================================================
 // INIT
 // ============================================================
@@ -150,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.title = `${INFO.name} | ${INFO.title}`;
   buildNav();
   buildHero();
+  initVisitorCounter();
   buildFooter();
   initScrollTop();
 });

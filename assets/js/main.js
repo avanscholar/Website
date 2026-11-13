@@ -117,12 +117,12 @@ function buildHero() {
 
       <div class="research-impact" aria-label="Research impact">
         <a class="impact-card" href="${INFO.links.scholar}" target="_blank" rel="noopener">
-          <span class="impact-value">${INFO.scholarStats?.hIndex ?? '—'}</span>
-          <span class="impact-label">H-index</span>
-        </a>
-        <a class="impact-card" href="${INFO.links.scholar}" target="_blank" rel="noopener">
           <span class="impact-value">${INFO.scholarStats?.citations != null ? Number(INFO.scholarStats.citations).toLocaleString() : '—'}</span>
           <span class="impact-label">Citations</span>
+        </a>
+        <a class="impact-card" href="${INFO.links.scholar}" target="_blank" rel="noopener">
+          <span class="impact-value">${INFO.scholarStats?.hIndex ?? '—'}</span>
+          <span class="impact-label">H-index</span>
         </a>
         <a class="impact-card" href="page/publications.html">
           <span class="impact-value">${(INFO.publications || []).length}</span>

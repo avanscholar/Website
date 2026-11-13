@@ -1553,3 +1553,101 @@ h1, h2, h3, h4 {
   line-height: 1.7;
   margin-bottom: .85rem;
 }
+
+
+/* Polished academic homepage */
+.section-hero {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(37,99,235,.08), transparent 26%),
+    linear-gradient(140deg, #f7faff 0%, #ffffff 58%, #f8fafc 100%);
+}
+
+.section-hero .hero-grid {
+  padding: 1.25rem 1.4rem 1.5rem;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(148,163,184,.24);
+  border-radius: 20px;
+  box-shadow: 0 12px 34px rgba(15,23,42,.06);
+}
+
+.section-hero .hero-info h1 {
+  font-size: clamp(2rem, 3vw, 2.65rem);
+  letter-spacing: -.04em;
+  line-height: 1.08;
+}
+
+.section-hero .hero-subtitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.section-hero .hero-institution {
+  margin-bottom: 1.1rem;
+}
+
+.section-hero .hero-mission {
+  max-width: 760px;
+  padding: .85rem 1rem;
+  margin-bottom: 1.15rem;
+  border-left: 4px solid var(--clr-accent);
+  border-radius: 0 10px 10px 0;
+  background: rgba(37,99,235,.055);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+.section-hero .hero-photo {
+  width: 210px;
+  height: 210px;
+  border-radius: 18px;
+  border: 5px solid #fff;
+  box-shadow: 0 14px 34px rgba(15,23,42,.16);
+}
+
+.hero-bio-below {
+  position: relative;
+  margin-top: 1.5rem;
+  padding: 1.6rem 1.75rem 1.35rem;
+  border: 1px solid var(--clr-border);
+  border-top: 3px solid var(--clr-accent);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(15,23,42,.045);
+}
+
+.hero-bio-below h2 {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  letter-spacing: -.025em;
+}
+
+.hero-bio-below .about-body {
+  max-width: 1120px;
+}
+
+.hero-bio-below .about-body p {
+  font-size: .92rem;
+  line-height: 1.78;
+  color: #334155;
+}
+
+.hero-bio-below .about-body p:first-child {
+  font-size: .96rem;
+  color: var(--clr-text);
+}
+
+@media (max-width: 720px) {
+  .section-hero .hero-grid {
+    padding: 1.25rem;
+  }
+
+  .section-hero .hero-photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero-bio-below {
+    padding: 1.3rem 1.2rem 1rem;
+  }
+}

@@ -17,8 +17,8 @@ const INFO = {
   mobile: "+1 602358----",
   lastUpdated: "May 2026",
   scholarStats: {
-    hIndex: 8,       // Enter current Google Scholar h-index, e.g. 10
     citations: 270,    // Enter current Google Scholar citation count, e.g. 250
+    hIndex: 8,       // Enter current Google Scholar h-index, e.g. 10
   },
 
   // ----------------------------------------------------------

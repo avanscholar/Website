@@ -749,6 +749,36 @@ const INFO = {
   // ----------------------------------------------------------
   gallery: [
     {
+      url:     "../assets/aiche_1.JPG",
+      thumb:   "../assets/aiche_1.JPG",
+      caption: "AIChE 2026 Annual Meeting in Minneapolis — connecting with the chemical engineering community.",
+      category: "AIChE 2026 Minneapolis",
+    },
+    {
+      url:     "../assets/aiche_2.jpeg",
+      thumb:   "../assets/aiche_2.jpeg",
+      caption: "AIChE 2026 Annual Meeting in Minneapolis — research, conversations, and new connections.",
+      category: "AIChE 2026 Minneapolis",
+    },
+    {
+      url:     "../assets/aiche_3.JPG",
+      thumb:   "../assets/aiche_3.JPG",
+      caption: "Sharing research and faculty vision at AIChE 2026 in Minneapolis.",
+      category: "AIChE 2026 Minneapolis",
+    },
+    {
+      url:     "../assets/aiche_4.jpeg",
+      thumb:   "../assets/aiche_4.jpeg",
+      caption: "Engaging with researchers and colleagues at AIChE 2026.",
+      category: "AIChE 2026 Minneapolis",
+    },
+    {
+      url:     "../assets/aiche_5.jpeg",
+      thumb:   "../assets/aiche_5.jpeg",
+      caption: "Memories from the AIChE 2026 Annual Meeting in Minneapolis.",
+      category: "AIChE 2026 Minneapolis",
+    },
+    {
       url:     "../assets/scene_1.jpeg",
       thumb:   "../assets/scene_1.jpeg",
       caption: "Planet over profit",

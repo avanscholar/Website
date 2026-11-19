@@ -753,6 +753,42 @@ const INFO = {
   // ----------------------------------------------------------
   gallery: [
     {
+      url:     "../assets/conference_1.jpeg",
+      thumb:   "../assets/conference_1.jpeg",
+      caption: "AIChE Annual Meeting — conference participation and professional engagement.",
+      category: "Conference",
+    },
+    {
+      url:     "../assets/conference_2.JPG",
+      thumb:   "../assets/conference_2.JPG",
+      caption: "AIChE Annual Meeting in Boston — connecting with the chemical engineering community.",
+      category: "Conference",
+    },
+    {
+      url:     "../assets/conference_3.jpeg",
+      thumb:   "../assets/conference_3.jpeg",
+      caption: "AIChE Annual Meeting — sharing conference experiences with colleagues.",
+      category: "Conference",
+    },
+    {
+      url:     "../assets/conference_4.JPG",
+      thumb:   "../assets/conference_4.JPG",
+      caption: "AIChE Annual Meeting in San Diego — professional engagement and conference memories.",
+      category: "Conference",
+    },
+    {
+      url:     "../assets/cricket_2.jpeg",
+      thumb:   "../assets/cricket_2.jpeg",
+      caption: "Celebrating a cricket achievement with trophies.",
+      category: "Cricket",
+    },
+    {
+      url:     "../assets/cricket_3.jpeg",
+      thumb:   "../assets/cricket_3.jpeg",
+      caption: "Cricket award moment and team celebration.",
+      category: "Cricket",
+    },
+    {
       url:     "../assets/aiche_1.JPG",
       thumb:   "../assets/aiche_1.JPG",
       caption: "AIChE 2026 Annual Meeting in Minneapolis — connecting with the chemical engineering community.",

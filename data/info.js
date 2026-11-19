@@ -753,6 +753,36 @@ const INFO = {
   // ----------------------------------------------------------
   gallery: [
     {
+      url:     "../assets/conference_5.jpg",
+      thumb:   "../assets/conference_5.jpg",
+      caption: "Conference participation and professional engagement.",
+      category: "Conference",
+    },
+    {
+      url:     "../assets/cricket_0.jpeg",
+      thumb:   "../assets/cricket_0.jpeg",
+      caption: "Cricket memories and team spirit.",
+      category: "Cricket",
+    },
+    {
+      url:     "../assets/graduate_2.jpeg",
+      thumb:   "../assets/graduate_2.jpeg",
+      caption: "Graduate seminar and academic milestone.",
+      category: "Graduate Seminar",
+    },
+    {
+      url:     "../assets/graduate_3.jpeg",
+      thumb:   "../assets/graduate_3.jpeg",
+      caption: "Celebrating an academic milestone.",
+      category: "Graduate Seminar",
+    },
+    {
+      url:     "../assets/graduate_4.JPG",
+      thumb:   "../assets/graduate_4.JPG",
+      caption: "Graduate seminar memories and academic achievement.",
+      category: "Graduate Seminar",
+    },
+    {
       url:     "../assets/conference_1.jpeg",
       thumb:   "../assets/conference_1.jpeg",
       caption: "AIChE Annual Meeting — conference participation and professional engagement.",
